@@ -1,81 +1,233 @@
-# Consumption
-- platform: mqtt
-  name: "VMC Power Current"
-  state_topic: "comfoair/power_consumption_current"
-  unit_of_measurement: W
-- platform: mqtt
-  name: "VMC Total Energy Saving"
-  state_topic: "comfoair/ah_ytd"
-  unit_of_measurement: Wh
+sensor:
 
-# FAns
+  # Consumption
 
-- platform: mqtt
-  name: "VMC Exhaust Fan Speed"
-  state_topic: "comfoair/exhaust_fan_speed"
-  unit_of_measurement: rpm
-- platform: mqtt
-  name: "VMC Supply Fan Speed"
-  state_topic: "comfoair/supply_fan_speed"
-  unit_of_measurement: rpm
-- platform: mqtt
-  name: "VMC Exhaust Fan Duty"
-  state_topic: "comfoair/exhaust_fan_duty"
-  unit_of_measurement: rpm
-- platform: mqtt
-  name: "VMC Supply Fan Duty"
-  state_topic: "comfoair/supply_fan_duty"
-  unit_of_measurement: rpm
-- platform: mqtt
-  name: "VMC Supply Fan User Speed"
-  state_topic: "comfoair/fan_speed"
+  - name: "VMC Power Current"
+    state_topic: "comfoair/power_consumption_current"
+    unique_id: VMC0001
+    device:
+      name: ComfoAir
+      model: Q450
+      manufacturer: Zehnder
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: W
 
-  # FLOW
-- platform: mqtt
-  name: "VMC Exhaust Fan Flow"
-  state_topic: "comfoair/exhaust_fan_flow"
-  unit_of_measurement: "m³/h"
-- platform: mqtt
-  name: "VMC Supply Fan Flow"
-  state_topic: "comfoair/supply_fan_flow"
-  unit_of_measurement: "m³/h"
+  - name: "VMC Total power consumption"
+    state_topic: "comfoair/ah_total"
+    unique_id: VMC0002
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: Wh
 
-# TEMPS
-- platform: mqtt
-  name: "VMC Outdoor Air Temperature"
-  state_topic: "comfoair/outdoor_air_temp"
-  unit_of_measurement: "°C"
-- platform: mqtt
-  name: "VMC Exhaust Air Temperature"
-  state_topic: "comfoair/exhaust_air_temp"
-  unit_of_measurement: "°C"
-- platform: mqtt
-  name: "VMC Extract Air Temperature"
-  state_topic: "comfoair/extract_air_temp"
-  unit_of_measurement: "°C"
-- platform: mqtt
-  name: "VMC Post Heater Temp Before"
-  state_topic: "comfoair/post_heater_temp_before"
-  unit_of_measurement: "°C"
-- platform: mqtt
-  name: "VMC Post Heater Temp After"
-  state_topic: "comfoair/post_heater_temp_after"
-  unit_of_measurement: "°C"
+  - name: "VMC Total Energy Saving"
+    state_topic: "comfoair/ah_ytd"
+    unique_id: VMC0003
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: Wh
+
+# Fans
+
+  - name: "VMC Exhaust Fan Speed"
+    state_topic: "comfoair/exhaust_fan_speed"
+    unique_id: VMC0004
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: rpm
+
+  - name: "VMC Supply Fan Speed"
+    state_topic: "comfoair/supply_fan_speed"
+    unique_id: VMC0005
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: rpm
+
+  - name: "VMC Exhaust Fan Duty"
+    state_topic: "comfoair/exhaust_fan_duty"
+    unique_id: VMC0006
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: rpm
+
+  - name: "VMC Supply Fan Duty"
+    state_topic: "comfoair/supply_fan_duty"
+    unique_id: VMC0007
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: rpm
+
+  - name: "VMC Supply Fan User Speed"
+    state_topic: "comfoair/fan_speed"
+    unique_id: VMC0008
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+
+# Flow
+
+  - name: "VMC Exhaust Fan Flow"
+    state_topic: "comfoair/exhaust_fan_flow"
+    unique_id: VMC0009
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "m³/h"
+
+  - name: "VMC Supply Fan Flow"
+    state_topic: "comfoair/supply_fan_flow"
+    unique_id: VMC0010
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "m³/h"
+
+# Temps
+
+  - name: "VMC Outdoor Air Temperature"
+    state_topic: "comfoair/outdoor_air_temp"
+    unique_id: VMC0011
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC Exhaust Air Temperature"
+    state_topic: "comfoair/exhaust_air_temp"
+    unique_id: VMC0012
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC Extract Air Temperature"
+    state_topic: "comfoair/extract_air_temp"
+    unique_id: VMC0013
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC Post Heater Temp Before"
+    state_topic: "comfoair/post_heater_temp_before"
+    unique_id: VMC0014
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC Post Heater Temp After"
+    state_topic: "comfoair/post_heater_temp_after"
+    unique_id: VMC0015
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC Target temp"
+    state_topic: "comfoair/target_temp"
+    unique_id: VMC0016
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
 
 # Humidity
-- platform: mqtt
-  name: "VMC Outdoor Air Humidity"
-  state_topic: "comfoair/outdoor_air_humidity"
-  unit_of_measurement: "%"
-- platform: mqtt
-  name: "VMC Exhaust Air Humidity"
-  state_topic: "comfoair/exhaust_air_humidity"
-  unit_of_measurement: "%"
-- platform: mqtt
-  name: "VMC Extract Air Humidity"
-  state_topic: "comfoair/extract_air_humidity"
-  unit_of_measurement: "%"
-- platform: mqtt
-  name: "VMC Supply Air Humidity"
-  state_topic: "comfoair/supply_air_humidity"
-  unit_of_measurement: "%"
+
+  - name: "VMC Outdoor Air Humidity"
+    state_topic: "comfoair/outdoor_air_humidity"
+    unique_id: VMC0017
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "%"
+
+  - name: "VMC Exhaust Air Humidity"
+    state_topic: "comfoair/exhaust_air_humidity"
+    unique_id: VMC0018
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "%"
+
+  - name: "VMC Extract Air Humidity"
+    state_topic: "comfoair/extract_air_humidity"
+    unique_id: VMC0019
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "%"
+
+  - name: "VMC Supply Air Humidity"
+    state_topic: "comfoair/supply_air_humidity"
+    unique_id: VMC0020
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "%"
+
+# Misc
+
+  - name: "VMC RMOT"
+    state_topic: "comfoair/rmot"
+    unique_id: VMC0021
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "C"
+
+  - name: "VMC bypass state"
+    state_topic: "comfoair/bypass_state"
+    unique_id: VMC0022
+    device:
+      name: ComfoAir
+      model: Q450
+      identifiers:
+        - 11111b4fa0
+    unit_of_measurement: "%"
